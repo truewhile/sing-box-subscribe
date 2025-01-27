@@ -129,6 +129,7 @@
       "outbounds": [
         "🌏 全球节点",
         "📌 单选节点",
+        "🎉 免流节点",
         "🇭🇰 香港节点",
         "🇯🇵 日本节点",
         "🇹🇼 台湾节点",
@@ -159,12 +160,39 @@
         }
       ],
       "interrupt_exist_connections": true
-    },{
+    },
+    {
+      "tag": "🎉 免流节点",
+      "type": "selector",
+      "outbounds": ["{all}"],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "ML|免流|ml"
+          ]
+        }
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🇨🇳 国内链接",
+      "type": "selector",
+      "outbounds": [
+        "🐢 直连",
+        "🎉 免流节点",
+        "📌 单选节点"
+      ],
+      "default":"🐢 直连",
+      "interrupt_exist_connections": true
+    }
+    ,{
      "tag":  "📺 哔哩哔哩",
      "type": "selector",
      "outbounds": [
         "🐢 直连",
         "📌 单选节点",
+        "🎉 免流节点",
         "🇭🇰 香港节点",
         "🇹🇼 台湾节点"
       ],
@@ -455,7 +483,7 @@
       },
       {
         "rule_set": ["geoip_cn", "geosite_cn"],
-        "outbound": "🐢 直连"
+        "outbound": "🇨🇳 国内链接"
       }
     ],
     "rule_set": [
