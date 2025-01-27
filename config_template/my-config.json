@@ -159,6 +159,17 @@
         }
       ],
       "interrupt_exist_connections": true
+    },{
+     "tag":  "📺 哔哩哔哩",
+     "type": "selector",
+     "outbounds": [
+        "🐢 直连",
+        "📌 单选节点",
+        "🇭🇰 香港节点",
+        "🇹🇼 台湾节点"
+      ],
+      "default":"🐢 直连",
+      "interrupt_exist_connections": true
     },
     {
       "tag": "📥 Downloader",
@@ -411,6 +422,10 @@
         "outbound": "📥 Downloader"
       },
       {
+       "rule_set": "bilibili",
+       "outbound": "📺 哔哩哔哩"
+      },
+      {
         "rule_set": "geosite_category-games@cn",
         "outbound": "🐢 直连"
       },
@@ -505,6 +520,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
+        "download_detour": "🐢 直连",
+        "update_interval": "3d"
+      },{
+        "tag": "bilibili",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
         "download_detour": "🐢 直连",
         "update_interval": "3d"
       },
