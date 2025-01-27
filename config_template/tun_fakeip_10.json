@@ -3,6 +3,7 @@
     "disabled": false,
     "level": "error",
     "timestamp": true
+    
   },
   "experimental": {
     "clash_api": {
