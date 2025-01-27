@@ -128,7 +128,7 @@
   ],
   "outbounds": [
     {
-      "tag":"Proxy",
+      "tag":"📌 单选节点",
       "type":"selector",
       "outbounds":[
         "auto",
@@ -210,7 +210,7 @@
       "type":"selector",
       "outbounds":[
         "TaiWan",
-        "Proxy"
+        "📌 单选节点"
       ]
     },
     {
@@ -331,7 +331,7 @@
       "type":"selector",
       "outbounds":[
         "direct",
-        "Proxy"
+        "📌 单选节点"
       ]
     },
     {
@@ -430,7 +430,7 @@
   ],
   "route": {
     "auto_detect_interface": true,
-    "final": "Proxy",
+    "final": "📌 单选节点",
     "rules": [
       {
         "type": "logical",
@@ -455,7 +455,7 @@
       },
       {
         "clash_mode": "global",
-        "outbound": "Proxy"
+        "outbound": "📌 单选节点"
       },
       {
         "domain": [
