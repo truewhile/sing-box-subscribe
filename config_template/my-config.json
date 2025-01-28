@@ -3,7 +3,6 @@
     "disabled": false,
     "level": "error",
     "timestamp": true
-    
   },
   "experimental": {
     "clash_api": {
@@ -13,11 +12,6 @@
       "external_ui_download_detour": "🐢 直连",
       "secret": "",
       "default_mode": "rule"
-    },
-    "cache_file": {
-      "enabled": true,
-      "store_fakeip": true,
-      "store_rdrc": true
     }
   },
   "dns": {
@@ -36,12 +30,8 @@
       },
       {
         "tag": "CNNIC DNS",
-        "address": "1.2.4.8",
+        "address": "223.5.5.5",
         "detour": "🐢 直连"
-      },
-      {
-        "tag": "FakeIP",
-        "address": "fakeip"
       }
     ],
     "rules": [
@@ -61,37 +51,11 @@
         "rewrite_ttl": 3600
       },
       {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "process_name": [
-              "ssh",
-              "ssh.exe",
-              "ssh-agent.exe",
-              "localsend",
-              "localsend_app.exe"
-            ],
-            "invert": true
-          },
-          {
-            "query_type": ["A", "AAAA"]
-          }
-        ],
-        "server": "FakeIP",
-        "rewrite_ttl": 3600
-      },
-      {
         "rule_set": "geosite_cn",
         "server": "中国 DNS",
         "rewrite_ttl": 3600
       }
     ],
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15",
-      "inet6_range": "fc00::/18"
-    },
     "final": "国际 DNS",
     "strategy": "prefer_ipv4",
     "disable_cache": false,
@@ -102,7 +66,10 @@
   "inbounds": [
     {
       "type": "tun",
-      "address": ["172.18.0.1/30", "fdfe:dcba:9876::1/126"],
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
       "auto_route": true,
       "strict_route": true,
       "endpoint_independent_nat": false,
@@ -141,7 +108,9 @@
     {
       "tag": "🌏 全球节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
       "tolerance": 10,
@@ -150,7 +119,9 @@
     {
       "tag": "📌 单选节点",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "exclude",
@@ -164,7 +135,9 @@
     {
       "tag": "🎉 免流节点",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
@@ -183,20 +156,20 @@
         "🎉 免流节点",
         "📌 单选节点"
       ],
-      "default":"🐢 直连",
+      "default": "🐢 直连",
       "interrupt_exist_connections": true
-    }
-    ,{
-     "tag":  "📺 哔哩哔哩",
-     "type": "selector",
-     "outbounds": [
+    },
+    {
+      "tag": "📺 哔哩哔哩",
+      "type": "selector",
+      "outbounds": [
         "🐢 直连",
         "📌 单选节点",
         "🎉 免流节点",
         "🇭🇰 香港节点",
         "🇹🇼 台湾节点"
       ],
-      "default":"🐢 直连",
+      "default": "🐢 直连",
       "interrupt_exist_connections": true
     },
     {
@@ -307,9 +280,16 @@
     {
       "tag": "🇭🇰 香港节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
-        {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong"]}
+        {
+          "action": "include",
+          "keywords": [
+            "🇭🇰|HK|hk|香港|港|HongKong"
+          ]
+        }
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -319,9 +299,16 @@
     {
       "tag": "🇯🇵 日本节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
-        {"action":"include","keywords":["🇯🇵|JP|jp|日本|日|Japan"]}
+        {
+          "action": "include",
+          "keywords": [
+            "🇯🇵|JP|jp|日本|日|Japan"
+          ]
+        }
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -331,9 +318,16 @@
     {
       "tag": "🇹🇼 台湾节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
-        {"action":"include","keywords":["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]}
+        {
+          "action": "include",
+          "keywords": [
+            "🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"
+          ]
+        }
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -343,9 +337,16 @@
     {
       "tag": "🇸🇬 新加坡节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
-        {"action":"include","keywords":["🇸🇬|SG|sg|新加坡|狮|Singapore"]}
+        {
+          "action": "include",
+          "keywords": [
+            "🇸🇬|SG|sg|新加坡|狮|Singapore"
+          ]
+        }
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -355,9 +356,16 @@
     {
       "tag": "🇺🇸 美国节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
-        {"action":"include","keywords":["🇺🇸|US|us|美国|美|United States"]}
+        {
+          "action": "include",
+          "keywords": [
+            "🇺🇸|US|us|美国|美|United States"
+          ]
+        }
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -396,7 +404,10 @@
         "outbound": "🐢 直连"
       },
       {
-        "process_name": ["localsend", "localsend_app.exe"],
+        "process_name": [
+          "localsend",
+          "localsend_app.exe"
+        ],
         "outbound": "🐢 直连"
       },
       {
@@ -412,14 +423,28 @@
         "mode": "and",
         "rules": [
           {
-            "process_name": ["ssh", "ssh.exe", "ssh-agent.exe"]
+            "process_name": [
+              "ssh",
+              "ssh.exe",
+              "ssh-agent.exe"
+            ]
           },
           {
-            "rule_set": ["geoip_cn", "geosite_cn"],
+            "rule_set": [
+              "geoip_cn",
+              "geosite_cn"
+            ],
             "invert": true
           }
         ],
         "outbound": "🖥️ SSH"
+      },
+      {
+        "ip_cidr": [
+          "172.16.6.62/30",
+          "3.3.3.3/30"
+        ],
+        "outbound": "重庆-ML"
       },
       {
         "domain_suffix": [
@@ -443,15 +468,18 @@
             "rule_set": "downloader"
           },
           {
-            "rule_set": ["geoip_cn", "geosite_cn"],
+            "rule_set": [
+              "geoip_cn",
+              "geosite_cn"
+            ],
             "invert": true
           }
         ],
         "outbound": "📥 Downloader"
       },
       {
-       "rule_set": "bilibili",
-       "outbound": "📺 哔哩哔哩"
+        "rule_set": "bilibili",
+        "outbound": "📺 哔哩哔哩"
       },
       {
         "rule_set": "geosite_category-games@cn",
@@ -462,7 +490,10 @@
         "outbound": "🎮 Game"
       },
       {
-        "rule_set": ["geoip_google", "geosite_google"],
+        "rule_set": [
+          "geoip_google",
+          "geosite_google"
+        ],
         "outbound": "🔎 Google"
       },
       {
@@ -482,7 +513,10 @@
         "outbound": "🚀 默认出站"
       },
       {
-        "rule_set": ["geoip_cn", "geosite_cn"],
+        "rule_set": [
+          "geoip_cn",
+          "geosite_cn"
+        ],
         "outbound": "🇨🇳 国内链接"
       }
     ],
@@ -550,7 +584,8 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
         "download_detour": "🐢 直连",
         "update_interval": "3d"
-      },{
+      },
+      {
         "tag": "bilibili",
         "type": "remote",
         "format": "binary",
