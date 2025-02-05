@@ -418,10 +418,6 @@
         "outbound": "🐢 直连"
       },
       {
-        "clash_mode": "direct",
-        "outbound": "🐢 直连"
-      },
-      {
         "clash_mode": "global",
         "outbound": "🚀 默认出站"
       },
