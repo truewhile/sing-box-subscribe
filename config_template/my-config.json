@@ -185,7 +185,8 @@
         "🇸🇬 新加坡节点",
         "🇺🇸 美国节点"
       ],
-      "interrupt_exist_connections": true
+      "interrupt_exist_connections": true,
+      "default":"📌 单选节点"
     },
     {
       "tag": "🎮 Game",
@@ -200,7 +201,8 @@
         "🇸🇬 新加坡节点",
         "🇺🇸 美国节点"
       ],
-      "interrupt_exist_connections": true
+      "interrupt_exist_connections": true,
+      "default":"📌 单选节点"
     },
     {
       "tag": "🔎 Google",
@@ -215,7 +217,8 @@
         "🇸🇬 新加坡节点",
         "🇺🇸 美国节点"
       ],
-      "interrupt_exist_connections": true
+      "interrupt_exist_connections": true,
+      "default":"📌 单选节点"
     },
     {
       "tag": "☁️ OneDrive",
@@ -230,7 +233,8 @@
         "🇸🇬 新加坡节点",
         "🇺🇸 美国节点"
       ],
-      "interrupt_exist_connections": true
+      "interrupt_exist_connections": true,
+      "default":"📌 单选节点"
     },
     {
       "tag": "🤖 OpenAI",
@@ -245,7 +249,8 @@
         "🇸🇬 新加坡节点",
         "🇺🇸 美国节点"
       ],
-      "interrupt_exist_connections": true
+      "interrupt_exist_connections": true,
+      "default":"📌 单选节点"
     },
     {
       "tag": "🪟 Microsoft",
@@ -260,7 +265,8 @@
         "🇸🇬 新加坡节点",
         "🇺🇸 美国节点"
       ],
-      "interrupt_exist_connections": true
+      "interrupt_exist_connections": true,
+      "default":"📌 单选节点"
     },
     {
       "tag": "🖥️ SSH",
@@ -275,7 +281,8 @@
         "🇸🇬 新加坡节点",
         "🇺🇸 美国节点"
       ],
-      "interrupt_exist_connections": true
+      "interrupt_exist_connections": true,
+      "default":"📌 单选节点"
     },
     {
       "tag": "🇭🇰 香港节点",
